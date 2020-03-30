@@ -1,0 +1,13 @@
+.contracts-manager-data-container {
+    margin: 15px auto;
+    max-width: 500px;
+}
+
+.contracts-manager-toolbar {
+    margin: 10px 0 0 0;
+    text-align: right;
+}
+
+.contracts-manager-toolbar .p-button {
+    margin-left: 10px;
+}
