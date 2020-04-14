@@ -1,0 +1,54 @@
+<div class="contracts-manager">
+  <div class="contracts-manager-data-container">
+    <p-table [columns]="columns"
+             [value]="(contracts|async)"
+             selectionMode="multiple"
+             (onRowSelect)="addRowSelection($event.data)"
+             (onRowUnselect)="removeRowSelection($event.data)"
+    >
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+          <td [attr.colspan]="columns.length">
+            <h5>No elements to show.</h5>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br/>
+    <p-button label="Add New"
+              icon="pi pi-plus"
+              iconPos="right"
+              (onClick)="handleAddContractClick()">
+    </p-button>
+    <p-button label="Edit"
+              icon="pi pi-plus"
+              iconPos="right"
+              [disabled]="editDisabled"
+              (onClick)="handleEditContractClick()">
+    </p-button>
+    <p-button label="Remove"
+              icon="pi pi-times"
+              iconPos="right"
+              [disabled]="removeDisabled"
+              styleClass="ui-button-danger"
+              (onClick)="handleRemoveButtonClick()">
+
+    </p-button>
+  </div>
+  <app-add-contract-pop-up></app-add-contract-pop-up>
+  <app-edit-contract-pop-up></app-edit-contract-pop-up>
+</div>

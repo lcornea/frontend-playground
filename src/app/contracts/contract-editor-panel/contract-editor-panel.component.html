@@ -1,0 +1,53 @@
+<div class="contract-editor">
+  <h3>Add new contract</h3>
+  <div className="contract-editor-input-container">
+    <div class="contract-editor-input-line">
+      <label>
+        Name:
+      </label>
+      <input type="text"
+             pInputText
+             [formControl]="name"
+             (change)="handleFormChange()"
+             class="contract-editor-input-element"
+      >
+    </div>
+    <div class="contract-editor-input-line">
+      <label>
+        Type:
+      </label>
+      <p-dropdown [options]="contractTypes"
+                  optionLabel="label"
+                  [formControl]="type"
+                  (onChange)="handleFormChange()"
+                  [filter]="true"
+                  class="contract-editor-input-element">
+      </p-dropdown>
+    </div>
+
+    <div class="contract-editor-input-line">
+      <label>
+        Due Date:
+      </label>
+      <p-calendar [(ngModel)]="dueDate"
+                  class="contract-editor-input-element"
+                  dateFormat="dd/mm/yy"
+                  (onSelect)="handleFormChange()"
+      ></p-calendar>
+    </div>
+    <div class="contract-editor-input-line">
+      <label>
+        Work Interval:
+      </label>
+      <p-calendar [(ngModel)]="interval"
+                  selectionMode="range"
+                  dateFormat="dd/mm/yy"
+                  class="contract-editor-input-element"
+                  (onSelect)="handleFormChange()"
+
+      ></p-calendar>
+    </div>
+
+
+  </div>
+</div>

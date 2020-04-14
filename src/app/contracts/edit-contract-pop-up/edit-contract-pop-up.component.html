@@ -1,0 +1,14 @@
+<p-dialog header="Edit Contract"
+          [(visible)]="display"
+          (onHide)="onHide()"
+          [style]="{width:'50vw'}"
+>
+  <app-contract-editor-panel
+    [contract]="contract"
+    (validForm)="onFormUpdate($event)"
+    #contractEditor></app-contract-editor-panel>
+  <p-footer>
+    <p-button label="Close" (onClick)="onHide()"></p-button>
+    <p-button label="Save" (onClick)="contractEditor.handleEdit()" [disabled]="!isFormValid"></p-button>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,33 @@
+div.contract-editor {
+  min-width: 450px;
+  min-height: 500px;
+  text-align: left;
+  display: inline-block;
+}
+
+div.contract-editor-input-container {
+  display: table;
+}
+
+.contract-editor h3 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.contract-editor-input-line {
+  display: table-row;
+}
+
+.contract-editor-input-line label {
+  display: table-cell;
+  text-align: left;
+  padding: 10px 10px;
+}
+
+.contract-editor-input-element {
+  display: table-cell;
+}
+
+.contract-editor .p-datepicker-calendar {
+  font-size: 10px;
+}
